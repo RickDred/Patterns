@@ -1,6 +1,6 @@
 package strategyPatterns.secondStrategyPattern;
 
-public class rubiksCubeToy implements Toy{
+public class RubiksCubeToy implements Toy{
     @Override
     public double price() {
         return 49.99;

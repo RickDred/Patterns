@@ -5,8 +5,36 @@ import observerPatterns.firstObserverPattern.*;
 public class Main {
 
     public static void main(String[] args) {
-        checkFirstObserverPattern();
     }
+
+    public static void checkFirstStrategyPattern() {
+        EmpressOrchidBook book1 = new EmpressOrchidBook();
+        Book book2 = new Fahrenheit451Book();
+        Book book3 = new MartinEdenBook();
+
+        System.out.println(book1.name());
+        System.out.println((book1.isBasedOn()) + "\n");
+        System.out.println(book2.name());
+        System.out.println(book2.author() + "\n");
+        System.out.println(book3.name());
+        System.out.println(book3.description());
+        System.out.println(((MartinEdenBook)book3).getMainCharacterName());
+    }
+
+    public static void checkSecondStrategyPattern() {
+        Toy toy1 = new PlushDogToy();
+        RubiksCubeToy toy2 = new RubiksCubeToy();
+        Toy toy3 = new WhirligigToy();
+
+        System.out.println(toy1.price() + "\n");
+        System.out.println(toy2.minAge());
+        System.out.println(toy2.size());
+        System.out.println(toy2.type() + "\n");
+        for(int i = 0; i < ((WhirligigToy)toy3).colors().length; i++) {
+            System.out.println(((WhirligigToy)toy3).colors()[i]);
+        }
+    }
+
     public static void checkFirstObserverPattern() {
         Client client1 = new Client("client1@gmail.com");
         Client client2 = new Client("client2@gmail.com");

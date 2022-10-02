@@ -1,6 +1,6 @@
 package strategyPatterns.secondStrategyPattern;
 
-public class plushDogToy implements Toy{
+public class PlushDogToy implements Toy{
     @Override
     public double price() {
         return 5.55;

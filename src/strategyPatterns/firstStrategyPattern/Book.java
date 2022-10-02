@@ -1,8 +1,8 @@
 package strategyPatterns.firstStrategyPattern;
 
 public interface Book {
-    String getName();
-    String getAuthor();
-    String getDescription();
-    int getPageCount();
+    String name();
+    String author();
+    String description();
+    int pageCount();
 }

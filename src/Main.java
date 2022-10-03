@@ -2,6 +2,7 @@ import strategyPatterns.firstStrategyPattern.*;
 import strategyPatterns.secondStrategyPattern.*;
 import observerPatterns.firstObserverPattern.*;
 import observerPatterns.secondObserverPattern.*;
+import decoratorPatterns.firstDecoratorPattern.*;
 
 public class Main {
 
@@ -93,5 +94,24 @@ public class Main {
         shopCenter1.removeVacancy(vacancy1);
 
         employee2.mySubscriptions();
+    }
+
+    public static void checkFirstDecoratorPattern() {
+        IceCream iceCream1 = new VanillaIceCream();
+        iceCream1 = new CaramelICD(iceCream1);
+        iceCream1 = new ChocolateICD(iceCream1);
+
+        System.out.print("ice cream1 cost's: " + iceCream1.getCost() + "\nice cream1 ingredients: ");
+        for(int i = 0; i < iceCream1.getIngredients().size(); i++) {
+            System.out.print(iceCream1.getIngredients().get(i) + " ");
+        }
+        System.out.println("");
+
+        IceCream iceCream2 = new CaramelICD(new FruitICD(new ChocolateICD(new CondensedMilkICD(new ChocolateIceCream()))));
+
+        System.out.print("ice cream2 cost's: " + iceCream2.getCost() + "\nice cream2 ingredients: ");
+        for(int i = 0; i < iceCream2.getIngredients().size(); i++) {
+            System.out.print(iceCream2.getIngredients().get(i) + " ");
+        }
     }
 }

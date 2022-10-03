@@ -2,7 +2,7 @@ package observerPatterns.firstObserverPattern;
 
 public class Client {
     private String email;
-    private final SubscriptionsControl subscriptions = new SubscriptionsControl(this);
+    private final SubscriptionsController subscriptions = new SubscriptionsController(this);
 
     public Client(String email){
         setEmail(email);

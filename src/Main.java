@@ -1,6 +1,7 @@
 import strategyPatterns.firstStrategyPattern.*;
 import strategyPatterns.secondStrategyPattern.*;
 import observerPatterns.firstObserverPattern.*;
+import observerPatterns.secondObserverPattern.*;
 
 public class Main {
 
@@ -8,17 +9,26 @@ public class Main {
     }
 
     public static void checkFirstStrategyPattern() {
-        EmpressOrchidBook book1 = new EmpressOrchidBook();
+        Book book1 = new EmpressOrchidBook();
         Book book2 = new Fahrenheit451Book();
         Book book3 = new MartinEdenBook();
+        BookPrinter bookPrinter = new BookPrinter(book1);
 
-        System.out.println(book1.name());
-        System.out.println((book1.isBasedOn()) + "\n");
-        System.out.println(book2.name());
-        System.out.println(book2.author() + "\n");
-        System.out.println(book3.name());
-        System.out.println(book3.description());
-        System.out.println(((MartinEdenBook)book3).getMainCharacterName());
+        bookPrinter.Print();
+
+        bookPrinter.setBook(book2);
+
+        bookPrinter.Print();
+
+        bookPrinter.Print(book3);
+
+//        System.out.println(book1.name());
+//        System.out.println((book1.isBasedOn()) + "\n");
+//        System.out.println(book2.name());
+//        System.out.println(book2.author() + "\n");
+//        System.out.println(book3.name());
+//        System.out.println(book3.description());
+//        System.out.println(((MartinEdenBook)book3).getMainCharacterName());
     }
 
     public static void checkSecondStrategyPattern() {
@@ -57,5 +67,31 @@ public class Main {
         product2.setInStock(true);
 
         client3.unSubscribe(product3);
+    }
+
+    public static void checkSecondObserverPattern() {
+        Employee employee1 = new Employee("ERick");
+        Employee employee2 = new Employee("Kiril");
+        Employee employee3 = new Employee("Adil", "manager");
+
+        ShopCenter shopCenter1 = new ShopCenter("internetShop");
+        ShopCenter shopCenter2 = new ShopCenter("Caffe");
+
+        employee1.subscribeToShopCenter(shopCenter1);
+        employee1.subscribeToShopCenter(shopCenter2);
+        employee2.subscribeToShopCenter(shopCenter1);
+        employee3.subscribeToShopCenter(shopCenter1);
+        employee3.subscribeToShopCenter(shopCenter2);
+
+        Vacancy vacancy1 = new Vacancy("cashier", 100);
+        shopCenter1.addVacancy(vacancy1);
+        shopCenter2.addVacancy("manager", 500, "take money", "you should be human");
+        shopCenter1.addVacancy("doctor", 121);
+
+        employee1.unsubscribeToShopCenter(shopCenter1);
+
+        shopCenter1.removeVacancy(vacancy1);
+
+        employee2.mySubscriptions();
     }
 }

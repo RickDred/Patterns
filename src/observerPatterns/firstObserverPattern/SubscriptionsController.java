@@ -3,11 +3,11 @@ package observerPatterns.firstObserverPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubscriptionsControl {
+public class SubscriptionsController {
     private final Client client;
     private final List<Product> products = new ArrayList<>();
 
-    public SubscriptionsControl(Client client) {
+    public SubscriptionsController(Client client) {
         this.client = client;
     }
 

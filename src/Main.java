@@ -1,12 +1,13 @@
-import strategyPatterns.firstStrategyPattern.*;
-import strategyPatterns.secondStrategyPattern.*;
-import observerPatterns.firstObserverPattern.*;
-import observerPatterns.secondObserverPattern.*;
-import decoratorPatterns.firstDecoratorPattern.*;
+import FirstTask.strategyPatterns.firstStrategyPattern.*;
+import FirstTask.strategyPatterns.secondStrategyPattern.*;
+import FirstTask.observerPatterns.firstObserverPattern.*;
+import FirstTask.observerPatterns.secondObserverPattern.*;
+import FirstTask.decoratorPatterns.firstDecoratorPattern.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        checkFirstStrategyPattern();
     }
 
     public static void checkFirstStrategyPattern() {

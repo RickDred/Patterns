@@ -1,4 +1,4 @@
 package Database;
 
-public class DB {
+public interface DB {
 }

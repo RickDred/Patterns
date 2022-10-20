@@ -1,24 +1,7 @@
 package category;
 
-public class Category {
-    private String name;
+public interface Category {
+    String getName();
 
-    public Category(String name) {
-        setName(name);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" +
-                "name='" + name + '\'' +
-                '}';
-    }
+    void setName(String name);
 }

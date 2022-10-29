@@ -2,11 +2,10 @@ package product;
 
 import category.Category;
 import client.Client;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Toy implements Product {
+public class Toy implements Product, Notifications {
     private String name;
     private double price;
     private Category category;
@@ -78,7 +77,8 @@ public class Toy implements Product {
         return 0;
     }
 
-//     Notifications
+//     product.Notifications
+    @Override
     public void notifyAllSubscribers(String message) {
         for (Client client : subscribers) {
             System.out.println(client.getName() + ": " + message);

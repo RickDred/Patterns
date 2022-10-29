@@ -6,7 +6,7 @@ import client.Client;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Computer implements Product{
+public class Computer implements Product, Notifications{
     private String name;
     private double price;
     private Category category;
@@ -74,5 +74,13 @@ public class Computer implements Product{
         subscribers.remove(client);
         if(!subscribers.contains(client)) return 1;
         return 0;
+    }
+
+    @Override
+    public void notifyAllSubscribers(String message) {
+        for (Client client : subscribers) {
+            System.out.println(client.getName() + ": " + message);
+        }
+//        return name + ": " + message;
     }
 }

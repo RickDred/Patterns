@@ -70,7 +70,7 @@ public class ApplicationController {
         else {
             user = new Client(input, email);
         }
-        db.addClient(user);
+        db.clientDB.addClient(user);
         System.out.println(user.getName() + " account with email " + user.getEmail() + " created");
         mainMenu();
     }
@@ -110,7 +110,6 @@ public class ApplicationController {
         System.out.println("=========================================================================");
         System.out.println("0. Exit");
         System.out.println("1. Back");
-        for(int i = 0; i < )
     }
 
     private void searchProduct() {

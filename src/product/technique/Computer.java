@@ -1,12 +1,14 @@
-package product;
+package product.technique;
 
 import category.Category;
 import client.Client;
+import product.Notifications;
+import product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Computer implements Product, Notifications{
+public abstract class Computer implements Notifications, Product {
     private String name;
     private double price;
     private Category category;

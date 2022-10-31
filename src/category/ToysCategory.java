@@ -1,9 +1,9 @@
 package category;
 
-public class DeviceCategory implements Category{
+public class ToysCategory implements Category{
     private String name;
 
-    public DeviceCategory(String name) {
+    public ToysCategory(String name) {
         setName(name);
     }
 

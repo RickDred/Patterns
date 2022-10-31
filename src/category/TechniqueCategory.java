@@ -1,9 +1,9 @@
 package category;
 
-public class ForKidsCategory implements Category{
+public class TechniqueCategory implements Category{
     private String name;
 
-    public ForKidsCategory(String name) {
+    public TechniqueCategory(String name) {
         setName(name);
     }
 

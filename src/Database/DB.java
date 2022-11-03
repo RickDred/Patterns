@@ -15,8 +15,8 @@ public class DB {
             if(db.clientDB == null) {
                 db.clientDB = new UserDB();
             }
+            db.connect();
         }
-        db.connect();
         return db;
     }
 

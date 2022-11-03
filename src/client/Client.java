@@ -5,8 +5,6 @@ public class Client {
     private String email;
     private int id;
 
-
-
     public Client(String email) {
         setEmail(email);
         setName("default");

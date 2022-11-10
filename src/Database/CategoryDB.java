@@ -14,7 +14,7 @@ public class CategoryDB extends DBController{
 
     public CategoryDB() {
         super();
-        conn = DB.getInstance().getConnection();
+        conn = PostgresDB.getInstance().getConnection();
     }
 
     public Category getCategory(String name) {

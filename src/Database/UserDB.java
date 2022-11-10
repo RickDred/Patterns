@@ -10,7 +10,7 @@ public class UserDB extends DBController{
 
     public UserDB() {
         super();
-        conn = DB.getInstance().getConnection();
+        conn = PostgresDB.getInstance().getConnection();
     }
 
     public void addClient(Client client) {
@@ -28,8 +28,8 @@ public class UserDB extends DBController{
     }
 
     public Client getClientById(int id) {
-        ResultSet rs = getOneRowById("customers", id);
         Client client = null;
+        ResultSet rs = getOneRowById("customers", id);
         try {
             client = new Client(rs.getString("customer_name"), rs.getString("customer_email"), rs.getInt("customer_id"));
         } catch (SQLException e) {

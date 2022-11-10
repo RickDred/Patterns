@@ -1,7 +1,9 @@
+import application.WelcomePage;
+
 public class Main {
 
     public static void main(String[] args) {
-        ApplicationController app = new ApplicationController();
-        app.startApp();
+        WelcomePage page = new WelcomePage();
+        page.setVisible(true);
     }
 }

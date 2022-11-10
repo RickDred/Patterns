@@ -1,4 +1,4 @@
-import Database.DB;
+import Database.PostgresDB;
 import category.Category;
 import client.Client;
 import product.Product;
@@ -16,13 +16,13 @@ import java.util.Scanner;
 public class ApplicationController {
     private Scanner in;
     private Client user;
-    private DB db;
+    private PostgresDB db;
     private ArrayList<Product> products;
     private ArrayList<Category> categories;
     private ArrayList<Product> cart;
 
     public void startApp() {
-        db = DB.getInstance();
+        db = PostgresDB.getInstance();
         in = new Scanner(System.in);
         System.out.println("=========================================================================");
         System.out.println("Hello! Welcome to our console shop app!");

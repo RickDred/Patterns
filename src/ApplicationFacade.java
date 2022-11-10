@@ -1,15 +1,15 @@
-import Database.DB;
+import Database.PostgresDB;
 import Database.UserDB;
 import client.Client;
 import java.sql.Connection;
 
 public class ApplicationFacade {
-    public DB getDB() {
-        return DB.getInstance();
+    public PostgresDB getDB() {
+        return PostgresDB.getInstance();
     }
 
     public Connection getConnection() {
-        return DB.getInstance().getConnection();
+        return PostgresDB.getInstance().getConnection();
     }
 
     public Client getClientById(int id) {

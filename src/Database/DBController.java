@@ -10,7 +10,7 @@ public abstract class DBController {
 
     public DBController() {
         try {
-            Connection conn = DB.getInstance().getConnection();
+            Connection conn = PostgresDB.getInstance().getConnection();
             stmt = conn.createStatement();
         } catch (Exception e) {
             e.printStackTrace();

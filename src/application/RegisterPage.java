@@ -13,10 +13,13 @@ public class RegisterPage extends JFrame{
     private JLabel nameLabel = new JLabel("Write your name");
     private JTextField name = new JTextField("default");
     private JButton register = new JButton("Register");
+    private ApplicationFacade app;
+
     public RegisterPage() {
         super("Registration");
         setBounds(100, 100, 300,100);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        app = new ApplicationFacade();
 
         Container container = getContentPane();
         setLayout(new GridLayout(3, 2));
@@ -37,8 +40,8 @@ public class RegisterPage extends JFrame{
                 return;
             }
             Client client = new Client(userName, userEmail);
-            UserDB db = new UserDB();
-            db.addClient(client);
+            app.registerNewClient(client);
+
             MainPage page = new MainPage(client);
             setVisible(false);
             page.setVisible(true);
